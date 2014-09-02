@@ -155,6 +155,20 @@
 //            $('#btnWrap').toggleClass('hide');
             return false;
         });
+
+        var loaded = 0;
+   
+        !loaded && manager.getLog({
+            target: $('#currentTable').val(),
+            id:$('#currentMainId').val()
+        }, function (data) {
+            for (var i = 0; i < data.length; i++) {
+                data[i].last_modify_time = util.formatDate(data[i].last_modify_time);
+            }
+            var html = util.tmpl(<Template.log_list>, {data: data});
+            $('#process_log_wrap').html(html);
+            loaded = 1;
+        });
     }
     
     function addEvents() {

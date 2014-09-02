@@ -55,6 +55,7 @@
         
     <div style="clear:both;margin: 0 100px;" class="form-horizontal" style="">
         <%if (op == 1 && data.cstatus == 75) {%>
+        <h3>处理意见：</h3>
         <div id="process_wrap">
             
         </div>
@@ -74,8 +75,6 @@
                 您已经评论此故障单！
             <% }%>
         </div>
-        
-        
         <%}%>
         
     </div>

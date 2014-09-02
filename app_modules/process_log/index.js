@@ -61,7 +61,7 @@ module.exports = {
         + ' left join user_list b on b.id=e.op_user '
         // + ' left join user_list d on d.id=a.process_user '
         + ' left join key_value_list c on c.id=e.dest_status '
-        + ' where e.src=\'' + table + '\' and e.main_id=' + id
+        + ' where (e.from_table=\'' + table + '\' or e.src=\'' + table + '\') and e.main_id=' + id
         + ' order by e.last_modify_time asc ';
         console.log(sql);
         conn.query(sql, callback);  

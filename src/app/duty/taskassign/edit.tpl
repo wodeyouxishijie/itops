@@ -1,6 +1,8 @@
 <div class="drawer-wrapper" style="">
     <div class="drawer-title"><i class="drawer-close"></i><span class="drawer-title-content">&nbsp;</span></div>
     <input type="hidden" id="currentId" value="<%=data.id%>"/>
+    <input type="hidden" id="currentMainId" value="<%=data.main_id%>"/>
+    <input type="hidden" id="currentTable" value="<%=data.task_src%>"/>
     <%var canEdit = (op==0 || (op == 1 && data.task_src == "tasking_list" && data.op_user == g_User.id && data.cstatus == 76));%>
     <div class="drawer bs-docs-example form-horizontal">
         <input class="input" value="<%=data.user_id%>" type="hidden" id="iptUserID">  
@@ -32,11 +34,7 @@
                         <input class="input-xlarge" type="text" id="iptRepairDeptName" readonly disabled placeholder="选择申请人后自动获取">
                     </div>
                 </div>
-            </li>
-                
-            
-                
-                
+            </li>                
             <%}%>
             <li>
                 <div class="control-group">
@@ -89,39 +87,44 @@
         </ul>
                 
     </div>
-    <div style="clear:both" class="form-horizontal">
+    <div style="clear:both;margin: 0 100px;" class="form-horizontal">
         <hr />
         
         
             <% if (data.cstatus == 76) {%>
-        <div id="process_wrap">
-            <div class="control-group">
-                <label class="control-label">处理人员</label>
-                <div class="controls">
-                    <span class="">
-                        <input type="hidden" id="processUser" />
-                        <input class="input-xlarge" type="text" id="iptProcessUser" placeholder="处理人">
-                        <select id="sel_duty_user" style="width:auto;display:none;"></select>
-                    </span> 
+                <div id="process_wrap">
+                    <div class="control-group">
+                        <label class="control-label">处理人员</label>
+                        <div class="controls">
+                            <span class="">
+                                <input type="hidden" id="processUser" />
+                                <input class="input-xlarge" type="text" id="iptProcessUser" placeholder="处理人">
+                                <select id="sel_duty_user" style="width:auto;display:none;"></select>
+                            </span> 
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">处理时间</label>
+                        <div class="controls">
+                            <span class="input-text"><input class="input-xlarge" value="<%=data.current_time%>" type="text" id="iptProcessDate" placeholder="处理时间"></span>
+                        </div>
+                    </div>
+                
+                    <div class="control-group">
+                        <label class="control-label">处理意见</label>
+                        <div class="controls">
+                            <textarea rows="3" id="iptProcessNote" placeholder="处理意见"><%=data.process_note%></textarea>  
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label">处理时间</label>
-                <div class="controls">
-                    <span class="input-text"><input class="input-xlarge" value="<%=data.current_time%>" type="text" id="iptProcessDate" placeholder="处理时间"></span>
-                </div>
-            </div>
-        
-            <div class="control-group">
-                <label class="control-label">处理意见</label>
-                <div class="controls">
-                    <textarea rows="3" id="iptProcessNote" placeholder="处理意见"><%=data.process_note%></textarea>  
-                </div>
-            </div>
-        </div>
-            <%} %>
+            <%} else if (data.cstatus == 75) {%>
+                <h3>处理意见：</h3>
+                <div id="process_log_wrap">
+            
+                </div> 
+            <%}%>
     </div>
-    <div style="clear:both;">
+    <div style="clear:both;margin: 0 100px;">
         <% if (canEdit) {%>
             
             <a href="javascript:void 0;" cmd="save" class="btn btn-primary">确定</a>
