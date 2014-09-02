@@ -1,0 +1,27 @@
+{
+	projects: [
+			
+			{
+				name :  "ve.js",
+				target : "../ve.js",
+				include : [
+					"sea_top.js",
+					"editor.js",
+					"toolbar.js",
+					"event.js",
+					"keyboard.js",
+					"range.js",
+					"plugins.js",
+					"mark.js",
+					"lib/",
+					"plugins/",
+					"marks/",
+					"sea_bottom.js",
+				],
+				template: [
+					"template/"
+				]
+			}
+	],
+	level:0
+}

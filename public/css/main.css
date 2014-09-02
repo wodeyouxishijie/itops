@@ -1,0 +1,103 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+textarea {
+    width:360px;
+    height:160px;
+}
+.dialog,.dialog_right {padding:0;margin:0;list-style:none; float:left;}
+.dialog > li {padding:0;margin:0; 5px;list-style:none;}
+.drawer-wrapper {margin:25px 10px;}
+.bind-domain-title {}
+.input_tips {color:#ccc;}
+.span3 {width:15%;}
+.role_power_ul {list-style:none; margin:0 10px; padding:0;
+overflow: hidden;
+width: 340px;}
+.new_con {margin:5px 0;}
+.role_power_ul li {list-style:none; padding:0; float:left;margin: 2px 5px;width: 100px;text-overflow: ellipsis;}
+.name_relative {position:relative;}
+.name_relative .text{position:absolute;display:inline-block;left:0;top:0;}
+.name_relative .edit_panel {height:90px;width:240px;margin:0; padding:0; left:0; top:0; position:absolute;background-color:#fff; box-shadow: 0 2px 6px #ababab;z-index:1;}
+.edit_panel input, .edit_panel button { margin:5px 10px;}
+.dialog_right { border:none;margin:20px 0 0;}
+.dialog_right li {}
+.msgbox {position:fixed;top:42px;left:0;z-index:1000;height:1px;width:100%;text-align:center}
+
+.flash-message {border:1px solid #FECD85;border-radius:2px;box-shadow:0 0 4px rgba(0,0,0,0.2);display:inline-block;padding:2px 40px;background:#FFF9B7;font-size:12px;line-height:20px;text-align:center}
+
+.mod_popup{background-color:#fff;position:absolute;z-index:199
+}
+.mod_popup > .title{height:20px;padding:20px 20px 14px 20px;border-bottom:1px solid #c6c6c6;position:relative;font-size:18px;font-weight:100;font-family:'Microsoft Yahei'
+}
+.mod_popup > .title > a.close{width:35px;height:35px;line-height:25px;position:absolute;top:10px;right:20px;font-size:24px;color:#000;text-align:center
+}
+.mod_popup > .content{padding:25px 20px;text-align:center
+}
+.mod_popup > .bottom{background-color:#eeeeee;line-height:60px;text-align:center;
+    position: absolute;
+bottom: 0;
+left: 50%;
+width: 100%;
+margin-left: -50%;
+}
+.mod_popup > .bottom.alignright{padding:0 10px;text-align:right
+}
+.button {display:inline-block;*zoom:1;*display:inline;padding:4px 27px;*padding:2px 6px;*height:30px;margin:0;*margin-left:.3em;line-height:20px;*line-height:18px;*width:auto;*overflow:visible;color:#fff;text-align:center;cursor:pointer;border:1px solid #9b9b9b;border-radius:2px;background-color:#ababab;vertical-align:middle;outline:0}
+.button::-moz-focus-inner,.button::-moz-focus-outer {border:0 none;padding:0;margin:0}
+.button_small {padding:1px 8px;*padding:0 4px;*height:24px}
+.button_large {padding:8px 20px;*padding:8px 10px;*height:38px}
+.button_width{padding:4px 34px;*padding:4px 17px;*height:30px}
+.button:link,.button:visited{color:#fff
+}
+.button_primary,.button_submit {background-color:#2570d5;color:#fff;text-shadow:none;border:1px solid #1e63c0}
+.button_primary:hover,.button_primary.hover,.button_submit:hover {background-color:#2b76db;color:#fff;text-shadow:0;border:1px solid #2666ab}
+.mod_page_wrap {max-height:400px;_height:400px; }
+
+a.expand {color:black; font-weight:800;}
+.grade_item label { width:120px; display:inline-block;}
+.input-text {white-space:nowrap;}
+.user_list {margin: 2px 5px; cursor: pointer;}
+.user_list_curr {background-color: #3a87ad;color:#fff;padding:2px 5px;}
+
+
+.table-bordered.table-nowrap {table-layout: fixed;}
+.table-bordered.table-nowrap td {white-space: nowrap;overflow: hidden;}

@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>请您登陆</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/bootstrap/css/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/main.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+        <h2>请选择您的系统角色</h2>
+        <%for (var i = 0; i < role_list.length; i++) {%>
+        <div class="row">
+          <div class="col-xs-6 col-md-3">
+            <a href="/setrole?role_id=<%=role_list[i].id%>" class="thumbnail">
+                <%=role_list[i].name%>
+            </a>
+          </div>
+        </div>
+        <%}%>
+    </div>
+  </body>
+</html>

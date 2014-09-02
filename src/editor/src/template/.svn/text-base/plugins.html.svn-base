@@ -1,0 +1,272 @@
+<!--
+	颜色插件 begin
+-->
+<template name="QNOTE.TPL.COLOR">
+	<div  class="ve-panel ve-color"  unselectable="on">
+		<% for(var i=0,item;item = colors[i];i++) { %>
+		<a href="javascript:;" value="<%=item%>" _event="ve-<%=command%>" style="background-color:<%=item%>;"></a>
+		<% } %>
+	</div>
+</template>
+
+
+<!--
+	颜色插件 end
+-->
+
+<!--
+	字号插件 begin
+-->
+<template name="QNOTE.TPL.FONTSIZE">
+	<div  class="ve-panel ve-fontsize" unselectable="on">
+		<% for(var i=0,item;item = fontsizes[i];i++) { %>
+		<a href="javascript:;"  _event="ve-FontSize" value="<%=item.value%>" style="font-size:<%=item.size%>;">
+			<%=item.text%>
+		</a>
+		<% } %>
+	</div>
+</template>
+
+<!--
+	字号插件 end
+-->
+
+<!--
+	超链接插件 begin
+-->
+<template name="QNOTE.TPL.CREATELINK">
+	<div  class="ve-panel ve-createLink">
+		
+	</div>
+</template>
+<template name="QNOTE.TPL.CL_IFRAME">
+    <html>
+        <head>
+            <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+            <style>
+                body{
+                    padding: 0px;
+                    margin: 0px;
+                    font-size: 14px;
+                }
+                input{
+                   width: 207px;
+                    height: 27px;
+                    outline: none;
+                    background-color: #F9F9F9;
+                    color: #999D9E;
+                    border: 1px solid #DADADA;
+                    font-family: inherit;
+                    font-size: inherit;
+                    font-weight: inherit;
+                    letter-spacing: normal;
+                    word-spacing: normal;
+                    text-transform: none;
+                    text-indent: 0px;
+                    text-shadow: none;
+                    display: inline-block;
+                    text-align: start;
+                }
+                input, .btn_add {
+                    margin-right: 10px;
+                }
+                .btn{
+                    display: inline-block;
+                    height: 26px;
+                    line-height: 26px;
+                    width: 51px;
+                    text-align: center;
+                }
+                .btn_1{
+                    color: #3D4958;
+                    border-radius: 3px;
+                    background-color: #FFF;
+                    border: solid 1px #CBCBCB;
+                    background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.02), rgba(255,255,255,.02) 46%);
+                    <% if (!/firefox/i.test(navigator.userAgent)) { %>
+                     background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.02), rgba(255, 255, 255, 0.02) 46%);
+                    background-image: -o-linear-gradient(bottom, rgba(0,0,0,.02), rgba(255,255,255,.02) 46%);
+                    background-image: -ms-linear-gradient(bottom, rgba(0,0,0,.02), rgba(255,255,255,.02) 46%);
+                    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.02), rgba(255, 255, 255, 0.02) 46%);
+                    <% } %>
+                }
+                a{
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            </style>
+        </head>
+        <script type="text/javascript">
+            <% if(domain){ %>
+            document.domain = "<%=domain%>";
+            <% } %>
+            function addLink(){
+                frameElement.callback(document.getElementById("link").value);
+            }
+            function removeLink(){
+                frameElement.callback();
+            }
+        </script>
+        <body>
+            <input id="link" value="<%=href%>"/>
+            <a onclick="addLink()" class="btn btn_1 btn_add">添加</a>
+            <a onclick="removeLink()" class="btn btn_1">删除</a>
+        </body>
+    </html>
+</template>
+
+<!--
+	超链接插件 end
+-->
+
+
+<!--
+    图片上传插件 begin
+-->
+
+<template name="QNOTE.TPL.UPLOADIMG">
+    <div  class="ve-panel ve-uploadimg" style="background-color:#ffffff">
+        
+    </div>
+</template>
+<template name="QNOTE.TPL.IMG_IFRAME">
+    <html>
+        <head>
+            <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+            <style>
+                html{color:#000;background:none;font-size:12px;font-family:arial,宋体,Arial Unicode MS,Mingliu,Arial,Helvetica;}
+                body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+                table{border-collapse:collapse;border-spacing:0;}
+                fieldset,img{border:0;}
+                address,caption,cite,code,dfn,th,var{font-style:normal;font-weight:normal;}
+                li{list-style:none;}
+                caption,th{text-align:left;}
+                h1,h2,h3,h4,h5,h6{font-size:100%;}
+                abbr,acronym{border:0;font-variant:normal;}
+                sup{vertical-align:text-top;}
+                sub{vertical-align:text-bottom;}
+                input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+                legend{color:#000;}
+                a{text-decoration:none;color:#6b6b6b;cursor:pointer;}
+                a *{cursor:pointer;}
+                a:hover{text-decoration:underline;}
+                input{outline:none }
+                .tab{padding:7px 20px 0;height:30px;border-bottom:1px solid #e2e2e2;background-color:#f9f9f9;}
+                .tab li{float:left;display:inline;height:28px;line-height:28px;width:83px;text-align:center;font-size:14px;position:relative;bottom:-1px;z-index:1;border:1px solid #F9F9F9;border-bottom:1px solid #e2e2e2;cursor:pointer;}
+                .tab .active{color:#3c4854;border:1px solid #e2e2e2;border-bottom:1px solid #fff;background-color:#fff;}
+                .wrap{width:365px;height:134px;}
+                .panel .pic_add{overflow:hidden;}
+                .panel{padding:20px;}
+                .panel_upload form{width:0;height:0;overflow:hidden;}
+                .panel_upload .pic_add label{width:80px;height:20px;line-height:20px;text-align:center;display:inline-block;cursor:pointer;}
+                .panel_upload .pic_add .file_name{margin-left:10px;display:inline-block;width:155px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+                .panel_upload .btns{padding-left:60px;margin-top:10px;}
+                .panel_upload .btns a{margin-right:10px;}
+                .panel_url input{width:238px;height:26px;line-height:26px;border:1px solid #dadada;}
+                .panel_url .btns{float:right;display:inline;margin-top:10px;}
+                .panel_url .btns a{margin-left:10px;}
+                .progress{position: relative;height: 25px;width: 200px;margin-left: 20px;}
+                .progress span{display: inline-block;height: 25px;width:2px;background: #ccc;}
+                .progress label{position: absolute;right: -40px;top:3px;}
+                .g_btn{display:inline-block;height:26px;line-height:26px;padding:0 10px;text-align:center;}
+                .g_btn:hover{text-decoration:none;}
+                .g_btn_3{color:#3d4958;border-radius:3px;
+                background-color: #fff;
+                border: solid 1px #cbcbcb;
+                background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.02), rgba(255,255,255,.02) 46%);
+                <% if (!/firefox/i.test(navigator.userAgent)) { %>
+                     background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.02), rgba(255,255,255,.02) 46%);
+                    background-image: -o-linear-gradient(bottom, rgba(0,0,0,.02), rgba(255,255,255,.02) 46%);
+                    background-image: -ms-linear-gradient(bottom, rgba(0,0,0,.02), rgba(255,255,255,.02) 46%);
+                    background-image: linear-gradient(to top, rgba(0,0,0,.02), rgba(255,255,255,.02) 46%);
+                <% } %>
+                }
+                .g_btn_3:hover{
+                border: solid 1px #939598;
+                background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.05), rgba(255,255,255,.05));
+                <% if (!/firefox/i.test(navigator.userAgent)) { %>
+                    background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.05), rgba(255,255,255,.05));
+                    background-image: -o-linear-gradient(bottom, rgba(0,0,0,.05), rgba(255,255,255,.05));
+                    background-image: -ms-linear-gradient(bottom, rgba(0,0,0,.05), rgba(255,255,255,.05));
+                    background-image: linear-gradient(to top, rgba(0,0,0,.05), rgba(255,255,255,.05));
+                <% } %>
+                }
+                .g_btn_3:active{
+                -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.3);
+                box-shadow: inset 0 3px 5px rgba(0,0,0,.3);
+                border: solid 1px #939598;
+                background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.05), rgba(255,255,255,.05));
+                <% if (!/firefox/i.test(navigator.userAgent)) { %>
+                    background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.05), rgba(255,255,255,.05));
+                    background-image: -o-linear-gradient(bottom, rgba(0,0,0,.05), rgba(255,255,255,.05));
+                    background-image: -ms-linear-gradient(bottom, rgba(0,0,0,.05), rgba(255,255,255,.05));
+                    background-image: linear-gradient(to top, rgba(0,0,0,.05), rgba(255,255,255,.05));
+                <% } %>
+                }
+
+            </style>
+        </head>
+        <script type="text/javascript">
+            <% if(domain){ %>
+            document.domain = "<%=domain%>";
+            <% } %>
+            function $(id){
+                return document.getElementById(id)
+            }
+            function insert(){
+                var url = $("img_1").value.replace(/["<>]/g,"");
+                
+                if(!/^http/.test(url)){
+                    return;
+                }
+
+                frameElement.callback({ecode:0,"url":url,net:true});
+            }
+            function cancel(){
+                 frameElement.callback();
+            }
+            function change(i){
+                var j = 1-i;
+                $("opt_"+i).className = "active";
+                $("opt_"+j).className = "";
+                $("panel_"+i).style.display = "";
+                $("panel_"+j).style.display = "none";
+                if(i){
+                    $("img_"+i).focus();
+                }
+            }
+            window.onload = function () {
+                frameElement.callback({
+                    "cmd": "initUpload",
+                    "wrapper": $("btnWrapper")
+                }); 
+            }
+
+        </script>
+        <body>
+            <div class="wrap">
+                <ul class="tab">
+                    <li class="active" id="opt_0" onclick="change(0)">本地上传</li>
+                    <li id="opt_1" onclick="change(1)">网络图片</li>
+                </ul>
+                <div class="panel panel_upload" id="panel_0">
+                    <div id="fileForm"> 
+                        <p class="btns">
+                            <span id="btnWrapper"></span>
+                            <a href="javascript:;" class="g_btn g_btn_3" onclick="cancel()">取消</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="panel panel_url" id="panel_1" style="display:none;">
+                    <p>插入网络照片：<input id="img_1" type="text" placeholder="http://"></p>
+                    <p class="btns"><a class="g_btn g_btn_3" onclick="insert()">确定</a><a class="g_btn g_btn_3"  onclick="cancel()">取消</a></p>
+                </div>
+            </div> 
+        </body>
+    </html>
+</template>
+
+<!--
+    图片上传插件 end
+-->
+

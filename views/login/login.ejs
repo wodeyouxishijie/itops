@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>请您登陆</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/bootstrap/css/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/main.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <form class="form-signin" role="form" method="post">
+        <h2 class="form-signin-heading">请您登陆</h2>
+        <input type="text" name="user_id" id="user_id" class="form-control" placeholder="账号" required autofocus>
+        <input type="password" name="pwd" id="user_pwd" class="form-control" placeholder="密码" required>
+        <label class="checkbox">
+            <span class="hide">
+                <input type="checkbox" value="remember-me"> 记住我
+            </span>
+        </label>
+        <button class="btn btn-lg btn-primary" type="submit">登陆</button>
+        <div class="ui-widget hide">
+          <div class="ui-state-error ui-corner-all">
+            <p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+            <strong>Alert:</strong> <span class="err_text"></span></p>
+          </div>
+        </div>
+      </form>
+
+    </div>
+      
+      <script type="text/javascript" src="dest/lib.js"></script>
+       <script type="text/javascript" src="dest/main.js"></script>
+      <script type="text/javascript" src="dest/login.js"></script>
+      
+  </body>
+</html>

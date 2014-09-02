@@ -1,0 +1,30 @@
+<!--编辑器-->
+<template name="QNOTE.TPL.EDITOR">
+	<div  style="width:<%=config.width%>;" class="ve-editor-wrap">
+		<div class="ve-fixed-toolbar" id="<%=tbwId%>"></div>
+		<% if (config.fixedToolbar) { var extraCls = " has-fixed-toolbar"} %>
+		<div _event="ve-edit" style="height:<%=config.height%>;"  id="<%=eId%>" contenteditable="true" class="ve-editor<%=extraCls%>"></div>
+		<div class="ve-statusbar" id="<%=sId%>" style="display:none;"><span>加载中……</span><a _event="ve-close" class="close">关闭</a></div>
+		<div class="ve-float" id="<%=fId%>" style="display:none;"></div>
+	</div>
+	
+</template>
+
+<!--工具栏-->
+<template name="QNOTE.TPL.TOOL">
+	<div  class="ve-toolbar" unselectable="on">
+		<% for(var i=0,pl;pl = plugins[i];i++) { %>
+			<% if (pl == "|") { %>
+				<span class="ve-toolbar-separator">|</span>
+			<% } else { %>
+				<a href="javascript:;" title="<%=(pl.description+(pl.shortcut?"("+pl.shortcut.join("+")+")":""))%>" command="<%=pl.command%>" _event="ve-command" class="<%=prefix%>_tool_<%=pl.command%>"  hidefocus="true">
+					<span class="<%=pl.className%>"></span>
+				</a>
+			<% } %>
+		<% } %>
+		<% if (zoomEdit) {%>
+			<a href="javascript:;" class="zoom-link" _event="ve-zoom">放大编辑</a>
+		<% } %>
+	</div>
+</template>
+

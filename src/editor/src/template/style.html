@@ -1,0 +1,234 @@
+<template name="QNOTE.TPL.STYLE">
+	.ve-editor-wrap{  
+        background:#fff;
+        position:relative;
+        padding:0px;
+        overflow-y:auto;
+        position:relative;
+    }
+    .ve-editor{
+        word-break:break-all;
+        padding:10px;
+        outline:none;
+        overflow-x:hidden;
+        min-height:100px;
+        line-height:normal;
+    }
+    .ve-editor strong{
+        font-weight:bold;
+    }
+    .ve-editor em{
+        font-style:italic;
+    }
+    .ve-statusbar{
+        position:absolute;
+        height:25px;
+        background:#D9DDE2;
+        top:0px;
+        transition: opacity .5s ease-in-out;
+        font-size:13px;
+        opacity:0;
+    }
+    .ve-float{
+        position:absolute;
+        z-index:999;
+    }
+    .ve-statusbar span{
+        float:left;
+        margin:5px 10px;
+        color:#7F7F7F;
+
+    }
+    .ve-statusbar .close{
+        float:left;
+        margin:5px 10px;
+        cursor:pointer;
+        color:#00c;
+    }
+    .ve-toolbar{
+        font-size: 0px;
+        padding: 3px;
+        height: 26px;
+        line-height: 26px;
+        background-color: #FFF;
+        -webkit-box-shadow: 0 3px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0 3px rgba(0,0,0,.1);
+        box-shadow: 0 3px rgba(0, 0, 0, 0.1);
+        border: solid 1px #CBCBCB;
+    }
+    .ve-fixed-toolbar .ve-toolbar{
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        width: auto;
+    }
+    .ve-toolbar a{
+        width: 25px;
+        height: 24px;
+        display: inline-block;
+        background-color: #FFF;
+        border: 1px solid #FFF;
+        border-radius: 2px;
+        text-align: center;
+        line-height: 24px;
+        position: relative;
+        font-size: 12px;
+    }
+    .ve-toolbar .active,.ve-toolbar a:hover{
+        border:1px solid #939598;
+        background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.05), rgba(255,255,255,.05));
+        background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.05), rgba(255,255,255,.05));
+        background-image: -o-linear-gradient(bottom, rgba(0,0,0,.05), rgba(255,255,255,.05));
+        background-image: -ms-linear-gradient(bottom, rgba(0,0,0,.05), rgba(255,255,255,.05));
+        background-image: linear-gradient(to top, rgba(0,0,0,.05), rgba(255,255,255,.05))
+    }
+   
+    .ve-toolbar a span{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        pointer-events: none;
+        font-size: 0;
+        line-height: 0;
+        overflow: hidden;
+        zoom: 1;
+        vertical-align: middle;
+        background: url(<%=icon%>) no-repeat;
+    }
+    .ve-toolbar .bold{
+        background-position: -20px -20px;
+    }
+    .ve-toolbar .strikethrough{
+         background-position: -20px -160px;
+    }
+    .ve-toolbar .underline{
+         background-position: -20px -60px;
+    }
+    .ve-toolbar .forecolor{
+         background-position: -20px -80px;
+    }
+    .ve-toolbar .italic{
+         background-position: -20px -40px;
+    }
+    .ve-toolbar .backcolor{
+         background-position: 0px -180px;
+    }
+     .ve-toolbar .FontSize{
+         background-position: -20px -221px;
+    }
+     .ve-toolbar .createLink{
+         background-position: -20px -200px;
+    }
+    .ve-toolbar .justifyleft{
+         background-position: -20px -100px;
+    }
+    .ve-toolbar .justifycenter{
+         background-position: -20px -120px;
+    }
+    .ve-toolbar .justifyright{
+         background-position: -20px -140px;
+    }
+    .ve-toolbar .image{
+        background-position: -20px -243px;
+    }
+    .ve-panel-wrap{
+        transition: opacity .2s ease-in-out;
+        opacity:0;
+        z-index:999;
+    }
+    .ve-panel{
+        background-color:#fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 4px rgba(0,0,0,.15);
+        padding: 10px;
+    }
+    .ve-color{
+        width: 210px;
+        height: 115px;
+    }
+    .ve-color a{
+        cursor: pointer;
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .05) inset ;
+        border:2px solid #fff;
+        font-size:0;
+        float: left;
+
+    }
+    .ve-color a:hover{
+        border:2px solid #548dd4;
+    }
+    .ve-fontsize{
+        width: 165px;
+        padding: 10px 0px;
+        overflow:auto;
+    }
+    .ve-fontsize a{
+        cursor: pointer;
+        display: block;
+        color: #000;
+        padding: 4px 10px;
+        text-decoration:none;
+
+    }
+    .ve-fontsize a:hover{
+        background-color:#eee;
+    }
+    .ve-createLink{
+        width:360px;
+    }
+    .ve-uploadimg{
+        width:365px;
+        padding:0 0 10px;
+    }
+    .ve-toolbar-separator{
+         color: #CCCCCC;
+        font-size: 12px;
+        margin: 0 5px;
+    }
+    .has-fixed-toolbar{
+        border: 1px solid #CBCBCB;
+        border-top: none;
+    }
+    .ve-editor img {
+        max-width:100%
+    }
+    .ve-toolbar a.zoom-link{
+        position:absolute; 
+        right:10px;
+        width:56px
+    }
+    .ve-maximize .ve-editor-wrap{
+        position: fixed;
+        left: 100px;
+        top: 100px;
+        right: 100px;
+        bottom: 100px;
+        z-index: 1100
+    }
+    .ve-maximize .slide-panel, .ve-maximize .main{
+        overflow: inherit!important
+    }
+    .ve-maximize-mask{
+        position:fixed;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        z-index:1000;
+        background:#000;
+    }
+    .ve-maximize .ve-fixed-toolbar .ve-toolbar{
+        border:none;
+        border-bottom:1px solid #cbcbcb
+    }
+    .ve-maximize .has-fixed-toolbar{
+        border:none
+    }
+    .ve-editor p {
+        margin: 1em 0;
+    }
+
+</template>

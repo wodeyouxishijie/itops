@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>记事本</title>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <script type="text/javascript" src="../ve.js"></script>
+    <style type="text/css">
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        .nav{
+             background: linear-gradient(to bottom, #f1f1f1 0%,#e2e2e2 100%);
+             height: 30px;
+        }
+        .wrap{
+            margin: 20px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            background: #f2f2f2;
+            width: 700px;
+        }
+        #editor{
+            width:710px;
+            border:1px solid #dfe1e4;
+        }
+        #toolbar{
+             width:500px;
+        }
+        .help{
+            font-size: 14px;
+            padding: 10px;
+            margin: 30px;
+        }
+        .help li{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav"></div>
+    
+    <div class = "wrap">
+        <div id="editor1" >xxxxxxxxxxxxxxxxxxxxxxxx</div>
+    </div>
+    <hr />
+
+    <ul class="help">
+        <li><label>浮动工具栏</label>:鼠标或键盘选中文字浮出。也可以通过参数固定显示在页面</li>
+        <li>
+            <label>键盘快捷键</label>：工具栏上有快捷键提示，比如选中情况下同时按住ctrl+shift+f设置前景色，颜色值为上次选择的颜色
+             <ul>
+                <li>ctrl+alt+f:设置字号</li>
+                <li>ctrl+b:加粗</li>
+                <li>ctrl+u:下划线</li>
+                <li>ctrl+shift+s:中划线</li>
+                <li>ctrl+shift+f:前景色</li>
+                <li>ctrl+shift+b:背景色</li>
+                <li>插件方式，可以设置更多……</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+<script type="text/javascript">
+
+    var $ = function(id){
+        return document.getElementById(id);
+    }
+    
+    var ed1 =new ve.Create({
+		commands:['FontSize','bold','underline','strikethrough','italic',"forecolor",'backcolor','justifyleft','justifycenter','justifyright','createLink'],
+        container:$("editor1"),
+        height:'300px',
+        width:'700px'
+	});
+
+    ed1.setContent('<div>中新网5月24日电 综合报道，朝鲜最高领导人金正恩特使崔龙海23日在北京表示，愿接受中方建议，同有关各方开展对话。与此同时，朝鲜也向韩国传达出鲜也向韩国传达出沟通讯号。自今年3月以来一直展示强硬的朝鲜，近日接连展开外交行动，释放对话意愿。舆论认为，持续紧张的半岛局势已出现缓和迹象。北京表示，愿接受中方建议，同有关各方开展对话。与此同时，朝北京表示，愿接受中方建议，同有关各方开展对话。与此同时，朝鲜也向韩国传达出沟通讯号。自今年3月以来一直展示强硬的朝鲜，近日<img src="http://top.oa.com/pictures/201307/1373534005_55.jpg" _event="ve-img">接连展开外交行动，释放对话意愿。舆论认为，持续紧张的半岛局势已出现缓和迹象。北京表示，愿接受中方建议，同有关各方开展对话。与此同时，沟通讯号。自今年3月以来一直展示强硬的朝鲜，近日接连展开外交行动，释放对话意愿。舆论认为，持续紧张的半岛局势已出现缓和迹象。</div>');
+
+    
+</script>
+
+</html>

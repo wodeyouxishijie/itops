@@ -1,0 +1,9 @@
+//cancel
+;(function(v){
+	v.$addPlugin({
+		command:'cancel',
+		execCommand:function(){
+			this.displayPanel();
+		}
+	});
+})(ve);
